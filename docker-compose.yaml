@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  beedoo-slack-bot-service:
+    build:
+      context: .
+    container_name: beedoo-slack-bot-service
+    hostname: beedoo-slack-bot-service
+    command: ["python", "./src/app.py", "prod"]
+    restart: unless-stopped
+    volumes:
+      - ./.env:/app/.env:ro
+    ports:
+      - 8888:8888
