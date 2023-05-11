@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  beedoo-slack-bot:
+    build:
+      context: .
+      target: development
+    container_name: beedoo-slack-bot-service-dev
+    command: ["python", "./src/app.py"]
+    restart: unless-stopped
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"
