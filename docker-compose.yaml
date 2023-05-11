@@ -6,9 +6,9 @@ services:
       context: .
     container_name: beedoo-slack-bot-service
     hostname: beedoo-slack-bot-service
-    command: ["python", "./src/app.py", "prod"]
+    command: ["python", "./src/app.py"]
     restart: unless-stopped
     volumes:
       - ./.env:/app/.env:ro
     ports:
-      - 8888:8888
+      - 5000:5000
